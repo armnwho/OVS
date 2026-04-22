@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+  <display-name>Online Voting System</display-name>
+
+  <!-- VoterVerifyServlet -->
+  <servlet>
+    <servlet-name>VoterVerifyServlet</servlet-name>
+    <servlet-class>servlets.VoterVerifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VoterVerifyServlet</servlet-name>
+    <url-pattern>/verify-voter</url-pattern>
+  </servlet-mapping>
+
+  <!-- OtpVerifyServlet -->
+  <servlet>
+    <servlet-name>OtpVerifyServlet</servlet-name>
+    <servlet-class>servlets.OtpVerifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OtpVerifyServlet</servlet-name>
+    <url-pattern>/verify-otp</url-pattern>
+  </servlet-mapping>
+
+  <!-- VoteServlet -->
+  <servlet>
+    <servlet-name>VoteServlet</servlet-name>
+    <servlet-class>servlets.VoteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VoteServlet</servlet-name>
+    <url-pattern>/vote</url-pattern>
+  </servlet-mapping>
+
+  <!-- LogoutServlet -->
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+  <!-- Welcome File -->
+  <welcome-file-list>
+    <welcome-file>verify-voter.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

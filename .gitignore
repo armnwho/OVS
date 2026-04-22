@@ -1,0 +1,19 @@
+# Apache Tomcat (download separately, too large for repo)
+apache-tomcat-11.0.2/
+
+# Compiled Java classes
+WebContent/WEB-INF/classes/
+
+# macOS
+.DS_Store
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
