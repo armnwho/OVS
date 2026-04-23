@@ -8,17 +8,17 @@ Open **Terminal** and run these 3 commands one by one:
 
 ```bash
 # 1. Reset database to clean state
-cat "/Users/armaan/Downloads/PROGRAMMING/CODE/VSCODE/PROJECTS/JAVA/OVS/database.sql" | /opt/homebrew/Cellar/mysql/9.6.0_2/bin/mysql -u root -pRoot@1234
+cat "/Users/armaan/Downloads/CODE/VSCODE/PROJECTS/JAVA/OVS/database.sql" | /opt/homebrew/Cellar/mysql/9.6.0_2/bin/mysql -u root -pRoot@1234
 ```
 
 ```bash
 # 2. Compile & deploy
-cd "/Users/armaan/Downloads/PROGRAMMING/CODE/VSCODE/PROJECTS/JAVA/OVS" && javac -cp "lib/jakarta.servlet-api-6.0.0.jar:lib/mysql-connector-j-9.6.0.jar" -d WebContent/WEB-INF/classes src/servlets/*.java && rm -rf apache-tomcat-11.0.2/webapps/voting && cp -r WebContent apache-tomcat-11.0.2/webapps/voting
+cd "/Users/armaan/Downloads/CODE/VSCODE/PROJECTS/JAVA/OVS" && javac -cp "lib/jakarta.servlet-api-6.0.0.jar:lib/mysql-connector-j-9.6.0.jar" -d WebContent/WEB-INF/classes src/servlets/*.java && rm -rf apache-tomcat-11.0.2/webapps/voting && cp -r WebContent apache-tomcat-11.0.2/webapps/voting
 ```
 
 ```bash
 # 3. Start Tomcat
-cd "/Users/armaan/Downloads/PROGRAMMING/CODE/VSCODE/PROJECTS/JAVA/OVS" && ./apache-tomcat-11.0.2/bin/startup.sh
+cd "/Users/armaan/Downloads/CODE/VSCODE/PROJECTS/JAVA/OVS" && ./apache-tomcat-11.0.2/bin/startup.sh
 ```
 
 Then open in browser: **http://localhost:8080/voting/**
@@ -41,5 +41,5 @@ Then open in browser: **http://localhost:8080/voting/**
 ## Stop Everything After Demo
 
 ```bash
-cd "/Users/armaan/Downloads/PROGRAMMING/CODE/VSCODE/PROJECTS/JAVA/OVS" && ./apache-tomcat-11.0.2/bin/shutdown.sh
+cd "/Users/armaan/Downloads/CODE/VSCODE/PROJECTS/JAVA/OVS" && ./apache-tomcat-11.0.2/bin/shutdown.sh
 ```
