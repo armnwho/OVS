@@ -8,12 +8,6 @@ The user interface, styles, variables, and election flows are modeled after offi
 
 ---
 
-## Dashboard Preview
-
-![Online Voting System Dashboard](voting_system_dashboard.png)
-
----
-
 ## Tech Stack
 
 | Layer       | Technology                                                    |
@@ -174,4 +168,3 @@ sqlite3 database.sqlite "SELECT * FROM votes;"
 You can reset the database state anytime using either method:
 - **Option 1 (API)**: Send a `POST` request to `http://localhost:3001/api/reset`.
 - **Option 2 (File)**: Delete `database.sqlite` from the project root and restart the server (`npm run dev`), which will automatically recreate and seed a clean database.
-
