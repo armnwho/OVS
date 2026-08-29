@@ -10,3 +10,6 @@ dist/
 
 # Local databases
 database.json
+*.sqlite*
+*.sqlite3*
+*.db*

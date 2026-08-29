@@ -638,23 +638,24 @@ function Vote() {
 }
 
 // --- Confirmed Receipt ---
+function generateReceiptHash() {
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const parts = [];
+  for (let p = 0; p < 4; p++) {
+    let seg = '';
+    for (let i = 0; i < 8; i++) seg += chars.charAt(Math.floor(Math.random() * chars.length));
+    parts.push(seg);
+  }
+  return parts.join('-');
+}
+
 function Confirmed() {
   const { currentUser, logout } = useSpendings();
-  const [receiptHash, setReceiptHash] = useState('');
+  const [receiptHash] = useState(() => generateReceiptHash());
 
   useEffect(() => {
     if (!currentUser) window.location.hash = '#/verify-voter';
     else if (currentUser.hasVoted !== 1) window.location.hash = '#/vote';
-    else {
-      const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      const parts = [];
-      for (let p = 0; p < 4; p++) {
-        let seg = '';
-        for (let i = 0; i < 8; i++) seg += chars.charAt(Math.floor(Math.random() * chars.length));
-        parts.push(seg);
-      }
-      setReceiptHash(parts.join('-'));
-    }
   }, [currentUser]);
 
   if (!currentUser || currentUser.hasVoted !== 1) return null;
@@ -697,14 +698,12 @@ function Confirmed() {
 // --- Live Results Tally ---
 function Results() {
   const { candidates, voters, currentUser } = useSpendings();
-  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     if (!currentUser) window.location.hash = '#/verify-voter';
-    else setChecked(true);
   }, [currentUser]);
 
-  if (!currentUser || !checked) return null;
+  if (!currentUser) return null;
 
   const parseCandidate = (fullName) => {
     const idx = fullName.lastIndexOf('(');
